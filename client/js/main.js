@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
@@ -20,3 +21,8 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
+
+Meteor.call("checkWeather", function(error, results) {
+  console.log(JSON.parse(results.content).list[0].main);
+});
+

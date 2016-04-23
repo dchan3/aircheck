@@ -12,6 +12,3 @@ Meteor.methods({
 });
 
 //invoke the server method
-Meteor.call("checkWeather", function(error, results) {
-  console.log(JSON.parse(results.content).list[0].main);
-});
